@@ -7,6 +7,9 @@ app = FastAPI()
 async def root():
     return {"message": "Hello World"}
 
+@app.get("/items/books")
+async def books():
+    return {'book' : 'Harry Potter'}
 
 @app.get("/items")
 async def items():
@@ -19,6 +22,3 @@ async def items():
 async def items(new):   
     return {'new' : new}
 
-@app.get("/items/books")
-async def books():
-    return {'book' : 'Harry Potter'}
